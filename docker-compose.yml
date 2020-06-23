@@ -1,0 +1,21 @@
+version: '2.4'
+services:
+  train:
+    build:
+      context: .
+    volumes:
+      - ./dataset:/root/shadow-detection/dataset
+      - ./result:/root/shadow-detection/result
+    runtime: nvidia
+    entrypoint:
+      - ./train.sh
+  test:
+    build:
+      context: .
+    volumes:
+      - ./result:/root/shadow-detection/result
+      - ./test_dataset:/root/shadow-detection/test_dataset
+      - ./test_result:/root/shadow-detection/test_result
+    runtime: nvidia
+    entrypoint:
+      - ./test.sh
