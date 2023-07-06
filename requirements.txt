@@ -4,4 +4,4 @@ chainercv==0.13.1
 # cupy==7.4.0
 matplotlib==3.2.2
 # numpy==1.18.1
-scipy==1.4.1
+scipy==1.10.0
